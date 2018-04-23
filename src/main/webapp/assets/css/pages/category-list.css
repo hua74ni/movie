@@ -1,0 +1,57 @@
+#film-list {
+    width: 1000px;
+}
+
+#film-list li {
+    margin-right: 30px;
+    height: 170px;
+    float: left;
+}
+
+.space {
+    background-color: #fff;
+    margin-top: 30px;
+    padding: 10px;
+    max-width: 422px;
+    width: 422px;
+    overflow-y: hidden;
+    position: relative;
+    box-shadow: 0 0 30px #eee;
+}
+
+.space td {
+    display: table-cell;
+    *display: inline-block;
+    display: table;
+    table-layout: fixed;
+    word-wrap: break-word;
+}
+
+.film-desc {
+    width: 290px;
+}
+
+.leader-board-top {
+    float: right;
+    width: 230px;
+    margin-top: -280px;
+    font-size: 15px;
+    font-weight: bolder;
+    color: grey;
+}
+
+.leader-board {
+    float: right;
+    width: 230px;
+    margin-top: -241px;
+
+}
+
+.leader-board a{
+    color: currentColor;
+}
+
+.leader-board a:hover{
+    color: burlywood;
+}
+

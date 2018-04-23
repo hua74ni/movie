@@ -1,0 +1,100 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/assets/css/pages/comment.css"/>
+    <script type="text/javascript">
+        seajs.use("pages/comment.js");
+    </script>
+</head>
+<!-- Modal -->
+<div class="modal fade" id="comment" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">添加评论</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row-fluid">
+                    <form class="form-horizontal" id="form_comment" role="form" action="/comment/post"
+                          method="POST">
+                        <input type="hidden" id="subjectId" name="subjectId" value="${subject.id}"/>
+                        <input type="hidden" id="rating" name="rating" value=""/>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">评分</label>
+
+                            <div id="scoremark1" class="scoremark scores" style="margin-top: 10px;">
+                                <%--<em class="score">8.0</em>--%>
+                                <span class="label label-default" style="font-size: 100%;line-height: 23px;">剧情</span>
+                                <span class="star">
+                                <span class="ystar" style="width:80%" val="8.0" ></span>
+                                    <ul>
+                                        <li><a href="javascript:void(0)" data-name="很差" class="one-star">1</a></li>
+                                        <li><a href="javascript:void(0)" data-name="较差" class="two-stars">2</a></li>
+                                        <li><a href="javascript:void(0)" data-name="一般" class="three-stars">3</a></li>
+                                        <li><a href="javascript:void(0)" data-name="较好" class="four-stars">4</a></li>
+                                        <li><a href="javascript:void(0)" data-name="很好" class="five-stars">5</a></li>
+                                    </ul>
+                                </span>
+                                <div style="left: 0px; display: none;" class="tips"></div>
+                            </div>
+
+                            <div id="scoremark2" class="scoremark scores">
+                                <%--<em class="score">8.0</em>--%>
+                                <span class="label label-default" style="font-size: 100%;line-height: 23px;">特效</span>
+                                <span class="star">
+                                <span class="ystar" style="width:80%" val="8.0"></span>
+                                    <ul>
+                                        <li><a href="javascript:void(0)" data-name="很差" class="one-star">1</a></li>
+                                        <li><a href="javascript:void(0)" data-name="较差" class="two-stars">2</a></li>
+                                        <li><a href="javascript:void(0)" data-name="一般" class="three-stars">3</a></li>
+                                        <li><a href="javascript:void(0)" data-name="较好" class="four-stars">4</a></li>
+                                        <li><a href="javascript:void(0)" data-name="很好" class="five-stars">5</a></li>
+                                    </ul>
+                                </span>
+                                <div style="left: 0px; display: none;" class="tips"></div>
+                            </div>
+
+                            <div id="scoremark3" class="scoremark scores" style="margin-bottom: 10px;">
+                                <%--<em class="score">8.0</em>--%>
+                                <span class="label label-default" style="font-size: 100%;line-height: 23px;">角色</span>
+                                <span class="star">
+                                <span class="ystar" style="width:80%" val="8.0"></span>
+                                    <ul>
+                                        <li><a href="javascript:void(0)" data-name="很差" class="one-star">1</a></li>
+                                        <li><a href="javascript:void(0)" data-name="较差" class="two-stars">2</a></li>
+                                        <li><a href="javascript:void(0)" data-name="一般" class="three-stars">3</a></li>
+                                        <li><a href="javascript:void(0)" data-name="较好" class="four-stars">4</a></li>
+                                        <li><a href="javascript:void(0)" data-name="很好" class="five-stars">5</a></li>
+                                    </ul>
+                                </span>
+                                <div style="left: 0px; display: none;" class="tips"></div>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group">
+                            <label class="col-sm-3 control-label">评论</label>
+
+                            <div class="col-sm-7">
+                                <textarea class="form-control" id="txt_content" name="content"
+                                          placeholder="请输入简评"></textarea>
+                            </div>
+                        </div>
+
+                        <div class="form-group margin-top-40">
+                            <div class="col-sm-offset-3 col-sm-10">
+                                <button type="button" class="btn btn-info" id="comment-submit">提交
+                                </button>
+                                <button type="button" class="btn btn-default" data-dismiss="modal">关闭</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</html>

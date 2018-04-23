@@ -1,0 +1,130 @@
+.main-part{
+    background-color: #f4f4f4;
+}
+.part1,.part2,.part3{
+    background-color: #ffffff;
+    border: solid 1px #f4f4f4;
+    border-radius: 2px;
+}
+.part1{
+    height: 480px;
+}
+.part2{
+    height: 300px;
+}
+.part3{
+    height: 600px;
+}
+.space{
+    padding: 6px;
+}
+.film-name{
+    color: #9B8282;
+    font-size: x-large;
+}
+.descri,.comments{
+    padding: 10px;
+}
+.descri-title,.comment-title{
+    font-size: 20px;
+    font-weight: bold;
+}
+p{
+    text-indent: 3%;
+    line-height: 1.8em;
+}
+.green,.blue,.red{
+    font-size: 15px;
+}
+.green{
+    color: green;
+}
+.blue{
+    color: #009bff;
+}
+.red{
+    color: #a94442;
+    height: 28px;
+    width: 88px;
+    background-color: #dca7a7;
+    text-align: center;
+    padding-top: 3px;
+    cursor: pointer;
+}
+.rot{
+    height: 1.3px;
+    background-color: #b0b0b0;
+    margin: 20px 0px;
+
+}
+.gray{
+    margin-left: 10px;
+    color: gray;
+}
+.comment-list{
+    margin-bottom: 18px;
+    padding-bottom: 18px;
+    border-bottom: 1px dashed #ddd;
+}
+
+
+/*星星评分*/
+
+.scoremarkDetail .star {
+    float: right;
+    display: block;
+    position: relative;
+    width: 116px;
+    height: 20px;
+    background: url(../../images/star.png) no-repeat 0px -20px;
+}
+.scoremarkDetail .ystar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 116px;
+    height: 20px;
+    background: url(../../images/star.png) no-repeat 0px 0px;
+}
+.scoremarkDetail .star ul {
+    width: 120px;
+    height: 20px;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.scoremarkDetail .star li {
+    float: left;
+    width: 24px;
+    height: 20px;
+}
+.scoremarkDetail .star li a {
+    display: block;
+    width: 24px;
+    height: 20px;
+    overflow: hidden;
+    text-indent: -9999px;
+    position: absolute;
+    z-index: 5;
+}
+
+.scoremarkDetail .star a.one-star {
+    cursor:default;
+    left: 0;
+}
+.scoremarkDetail .star a.two-stars {
+    cursor:default;
+    left: 24px;
+}
+.scoremarkDetail .star a.three-stars {
+    cursor:default;
+    left: 48px;
+}
+.scoremarkDetail .star a.four-stars {
+    left: 72px;
+    cursor:default;
+}
+.scoremarkDetail .star a.five-stars {
+    cursor:default;
+    left: 96px;
+}

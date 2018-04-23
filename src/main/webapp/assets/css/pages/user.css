@@ -1,0 +1,25 @@
+.list-title {
+    height: 26px;
+    background-color: #EAF0F0;
+    padding-top: 4px;
+}
+
+.pic {
+    padding-top: 7px;
+}
+
+.delete {
+    padding: 3px 6px 0 0;
+}
+
+.pl {
+    font-size: 17px;
+}
+
+.p2 {
+    font-size: 15px;
+}
+.title2{
+    margin: 10px 0;
+    color: gray;
+}

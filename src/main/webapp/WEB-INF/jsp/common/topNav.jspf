@@ -1,0 +1,64 @@
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+
+<div class="warpper">
+    <div class="top-bar">
+        <div class="navbar-inner">
+            <div class="container">
+                <div class="pull-left">
+                    <div class="col-md-4"><a class="brand" href="/">${appName}</a></div>
+                    <div class="col-md-6">
+                        <div class="margin-top-10"></div>
+                        <ul class="list-unstyled">
+                            <li class="pull-left head-nav">
+                                <a href="/"><i class="fa fa-home fa-fw"></i> 首页</a></li>
+                            <li class="pull-left head-nav">
+                                <a href="/category"><i class="fa fa-th-list fa-fw"></i> 分类</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-md-2">
+                        <form class="navbar-search pull-left" action="/category" method="post">
+                            <input type="text" class="search-query" name="key" placeholder="饥饿游戏">
+                        </form>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+
+                <div class="nav pull-right">
+                    <div class="margin-top-10"></div>
+                    <c:choose>
+                        <c:when test="${SessionUtils.user != null}">
+                            <li class="pull-left">
+                                <a class="link-signin" href="/user/${SessionUtils.user.id}">
+                                    <i class="fa fa-user fa-fw"></i><font id="nav_nickname">
+                                    欢迎${SessionUtils.user.userName}
+                                </font>
+                                </a>
+                            </li>
+                            <li class="pull-left">
+                                <a href="/logout">
+                                    退出登录
+                                </a>
+                            </li>
+                        </c:when>
+                        <c:otherwise>
+                            <li class="pull-left">
+                                <a class="link-signin" href="/login">
+                                    登陆
+                                </a>
+                            </li>
+                            <li class="pull-left">
+                                <a href="/register">
+                                    注册
+                                </a>
+                            </li>
+                        </c:otherwise>
+                    </c:choose>
+
+                </div>
+
+                <div class="clearfix"></div>
+            </div>
+        </div>
+    </div>
+</div>

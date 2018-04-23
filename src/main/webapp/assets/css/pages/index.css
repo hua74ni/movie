@@ -1,0 +1,110 @@
+/* 时间轴布局
+----------------------------------------------------------------------------------------------------------------------*/
+.timeLayout {
+    width: 980px;
+    clear: both;
+    overflow: hidden;
+    position: relative;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.timeLayout .midLine {
+    width: 3px;
+    height: 100%;
+    _height: 926px;
+    position: absolute;
+    left: 489px;
+    background: #ccb18b;
+}
+
+.time-item {
+    width: 474px;
+    height: 458px;
+    margin-top: 30px;
+    background: #fafafa;
+    position: relative;
+}
+
+.time-list {
+    position: relative;
+    z-index: 10;
+}
+
+.time-list .left {
+    float: left;
+    clear: left
+}
+
+.time-list .right {
+    float: right;
+    clear: right
+}
+
+.time-item .timedot {
+    position: absolute;
+    top: 15px;
+    background: #fff;
+    color: #45729b;
+    font-size: 24px;
+    _font-size: 13px;
+    text-align: center;
+    text-shadow: #45729b 0 0 1px
+}
+
+.time-list .left .timedot {
+    right: -24px;
+    _right: -23px;
+}
+
+.time-list .right .timedot {
+    left: -23px;
+    _left: -22px;
+}
+
+.filmInfo h3 {
+    font: bold 17px/1.2 '微软雅黑';
+}
+
+.filmInfo p span {
+    width: 220px;
+    margin-left: 5px;
+}
+
+.filmInfo p a:first-child {
+    padding-left: 0px;
+}
+
+.filmInfo p.score {
+    line-height: 23px;
+    width: 100%;
+}
+
+.filmInfo p.score b {
+    font: normal 23px/1 Verdana, Geneva, sans-serif;
+    padding: 0 5px;
+}
+
+.filmInfo .mdbColor {
+    color: #9c7445
+}
+
+/* 侧边时间线
+----------------------------------------------------------------------------------------------------------------------*/
+.timeLine {
+    position: absolute;
+    width: 60px;
+    left: -80px;
+    top: 104px;
+    text-align: right;
+    font-family: "微软雅黑";
+    *width: 64px;
+    *top: 120px
+}
+.title{
+    color: rgb(97, 109, 116);
+    font-weight: bold;
+    font-size: xx-large;
+    text-align: center;
+}
+
