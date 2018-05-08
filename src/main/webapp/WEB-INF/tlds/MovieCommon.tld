@@ -9,7 +9,7 @@
 
     <tag>
         <name>stringMask</name>
-        <tag-class>me.veryyoung.movie.taglib.StringMaskHandler</tag-class>
+        <tag-class>graduation.ssh.movie.taglib.StringMaskHandler</tag-class>
         <body-content>empty</body-content>
         <attribute>
             <name>beforeMask</name>
@@ -33,7 +33,7 @@
 
     <tag>
         <name>securityTag</name>
-        <tag-class>me.veryyoung.movie.taglib.SecurityTagHandler</tag-class>
+        <tag-class>graduation.ssh.movie.taglib.SecurityTagHandler</tag-class>
         <body-content>scriptless</body-content>
         <attribute>
             <name>userId</name>

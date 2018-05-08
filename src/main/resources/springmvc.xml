@@ -17,7 +17,7 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <context:component-scan base-package="me.veryyoung.movie.controller"/>
+    <context:component-scan base-package="graduation.ssh.movie.controller"/>
 
     <bean id="mappingJackson2HttpMessageConverter"
           class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
@@ -48,7 +48,7 @@
     <context:annotation-config/>
 
     <mvc:interceptors>
-        <bean class="me.veryyoung.movie.web.AuthenticationFilter"></bean>
+        <bean class="graduation.ssh.movie.web.AuthenticationFilter"></bean>
     </mvc:interceptors>
 
 

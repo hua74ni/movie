@@ -1,7 +1,7 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
-    <groupId>me.veryyoung</groupId>
+    <groupId>graduation.ssh</groupId>
     <artifactId>movie</artifactId>
     <packaging>war</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -186,6 +186,21 @@
             <artifactId>hibernate-validator</artifactId>
             <version>5.2.0.Alpha1</version>
         </dependency>
+
+        <!-- solr 全文检索 -->
+        <dependency>
+            <groupId>org.apache.solr</groupId>
+            <artifactId>solr-solrj</artifactId>
+            <version>5.5.5</version>
+        </dependency>
+
+        <dependency>
+            <groupId>commons-beanutils</groupId>
+            <artifactId>commons-beanutils</artifactId>
+            <version>1.9.3</version>
+        </dependency>
+
+
     </dependencies>
 
     <build>

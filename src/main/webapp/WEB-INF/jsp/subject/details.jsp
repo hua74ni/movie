@@ -27,7 +27,7 @@
                     <div class="pull-left margin-left-30">
                         <div class="film-name">${subject.title}(${subject.year})</div>
                         <div class="margin-top-30"></div>
-                        <table class="table table-condensed table-striped table-bordered" style="font-size:12px;">
+                        <table class="table table-condensed table-striped table-bordered" style="font-size:12px;width: 450px;">
                             <tbody>
                             <tr>
                                 <td class="span2"><span class="x-m-label">导演</span></td>
