@@ -32,7 +32,7 @@ import java.util.List;
 @Repository
 public class SubjectDao extends BaseDao<Subject> {
 
-    private final static String SOLR_URL = "http://localhost:8080/solr/new_core";
+    public final static String SOLR_URL = "http://localhost:8080/solr/new_core";
 
     @Autowired
     private PlayingDao playingDao;

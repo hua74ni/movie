@@ -65,6 +65,9 @@ public class HomeController extends BaseController {
         return "/register";
     }
 
+    @RequestMapping({"/adminPage"})
+    public String adminPage(){return "/adminPage";}
+
 
     @RequestMapping(value = "/register", method = RequestMethod.POST)
     public ModelAndView register(User user, String captcha) {

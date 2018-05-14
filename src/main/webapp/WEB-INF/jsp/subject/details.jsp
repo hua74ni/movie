@@ -15,7 +15,7 @@
                 <div class="margin-top-10"></div>
                 <div class="space">
                     <div class="pull-left">
-                        <img src="${subject.image}">
+                        <img style="width: 375px;height: 405px;margin-left: 13px;" src="${subject.image}">
 
                         <p>相关链接：<a href="${douban}${subject.id}" target="_blank"><span
                                 style="color: #66afe9;">豆瓣链接</span></a>

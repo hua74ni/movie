@@ -85,6 +85,9 @@
                 <div class="margin-top-30"></div>
 
                 <c:if test="${SessionUtils.user.admin}">
+                    <a href="/adminPage">
+                        <button type="button" class="btn btn btn-warning">管理员界面</button>
+                    </a>
                     <a href="/user/${user.id}/setAdmin">
                         <c:choose>
                             <c:when test="${user.admin}">
@@ -98,7 +101,7 @@
                 </c:if>
                 <c:if test="${SessionUtils.user.id eq user.id}">
                     <a href="/password">
-                        <button type="button" class="btn btn-info">修改密码</button>
+                        <button type="button" class="btn btn-info" style="margin-top: 7px;">修改密码</button>
                     </a>
                 </c:if>
 

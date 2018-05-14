@@ -10,7 +10,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 /**
  * Created by huangdonghua on 2017/12/28.
@@ -39,6 +41,25 @@ public class SubjectServiceImpl extends BaseService implements SubjectService {
     @Override
     public List<Subject> getLeaderboard() {
         return subjectDao.getLeaderboard();
+    }
+
+    @Override
+    public Map<String, Object> getSubjectList(int start, int end, String sort, String type, String key) {
+        Map<String,Object> map = new HashMap<String, Object>();
+
+        int total = 0;
+        List<Subject> list = null;
+
+        total = subjectDao.countBySearch("不限","不限",type,sort,key);
+        list = subjectDao.listBySearch(start,end,"不限","不限",type,sort,key);
+
+        map.put("recordsFiltered", total);
+
+        map.put("data", list);
+
+        map.put("recordsTotal", total);
+
+        return map;
     }
 
 }
