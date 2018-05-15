@@ -62,4 +62,9 @@ public class SubjectServiceImpl extends BaseService implements SubjectService {
         return map;
     }
 
+    @Override
+    public Subject getById(String id) {
+        return subjectDao.find(id);
+    }
+
 }

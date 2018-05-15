@@ -117,8 +117,8 @@
                         "sWidth" : "12%",
                         "render" : function(data, type, full, meta){
                             data =
-                                '<button id="modifySubject" onclick="modifySubject('+data+')" class="btn btn-success btn-sm" data-id = '+ data +'><span class="glyphicon glyphicon-edit"></span> &nbsp;查看</button> &nbsp;&nbsp;'+
-                                '<button id="modifyBuyer" onclick="modifyBuyer('+data+')" class="btn btn-info btn-sm" data-id = '+ data +'><span class="glyphicon glyphicon-edit"></span> &nbsp;修改</button> &nbsp;&nbsp;'+
+                                '<button id="detailSubject" onclick="detailSubject('+data+')" class="btn btn-success btn-sm" data-id = '+ data +'><span class="glyphicon glyphicon-edit"></span> &nbsp;查看</button> &nbsp;&nbsp;'+
+                                '<button id="modifySubject" onclick="modifySubject('+data+')" class="btn btn-info btn-sm" data-id = '+ data +'><span class="glyphicon glyphicon-edit"></span> &nbsp;修改</button> &nbsp;&nbsp;'+
                                 '<button id="deleteBuyer" class="btn btn-danger btn-sm" data-id = '+ data +'><span class="glyphicon glyphicon-trash"></span> &nbsp;删除</button>';
                             return data;
                         }

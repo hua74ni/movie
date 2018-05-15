@@ -1,8 +1,9 @@
 package graduation.ssh.movie.controller;
 
-import graduation.ssh.movie.rest.PageInfo;
+import graduation.ssh.movie.dao.LeaderboardDao;
+import graduation.ssh.movie.entity.LeaderBoard;
 import graduation.ssh.movie.entity.Subject;
-import graduation.ssh.movie.service.DoubanService;
+import graduation.ssh.movie.rest.PageInfo;
 import graduation.ssh.movie.service.SubjectService;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -11,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -24,7 +26,7 @@ public class CategoryController extends BaseController {
     private SubjectService subjectService;
 
     @Autowired
-    private DoubanService doubanService;
+    private LeaderboardDao leaderboardDao;
 
     @RequestMapping({"/index", ""})
     public ModelAndView index(String key) {
@@ -49,7 +51,12 @@ public class CategoryController extends BaseController {
     @ResponseBody
     public List<Subject> leaderboard(){
 
-        List<Subject> subjectList = subjectService.getLeaderboard();
+        List<LeaderBoard> leaderboardList = leaderboardDao.findAll();
+        List<Subject> subjectList = new ArrayList<>();
+        for (LeaderBoard leaderboard:
+             leaderboardList) {
+            subjectList.add(subjectService.getById(leaderboard.getId()));
+        }
 
         return subjectList;
     }

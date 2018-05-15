@@ -16,4 +16,6 @@ public interface SubjectService {
     public List<Subject> getLeaderboard();
 
     public Map<String,Object> getSubjectList(int start, int end, String sort, String type, String key);
+
+    public Subject getById(String id);
 }

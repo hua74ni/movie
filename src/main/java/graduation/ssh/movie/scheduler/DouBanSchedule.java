@@ -1,9 +1,12 @@
 package graduation.ssh.movie.scheduler;
 
-import graduation.ssh.movie.dao.SubjectDao;
+import graduation.ssh.movie.dao.LeaderboardDao;
 import graduation.ssh.movie.dao.PlayingDao;
+import graduation.ssh.movie.entity.LeaderBoard;
 import graduation.ssh.movie.entity.Playing;
+import graduation.ssh.movie.entity.Subject;
 import graduation.ssh.movie.service.DoubanService;
+import graduation.ssh.movie.service.SubjectService;
 import graduation.ssh.movie.service.impl.DoubanServiceImpl;
 import graduation.ssh.movie.utils.HttpUtils;
 import org.json.JSONArray;
@@ -28,15 +31,18 @@ public class DouBanSchedule {
     private static Logger logger = LoggerFactory.getLogger(DouBanSchedule.class);
 
     @Autowired
-    private SubjectDao subjectDao;
+    private LeaderboardDao leaderboardDao;
 
     @Autowired
     private PlayingDao playingDao;
 
     @Autowired
+    private SubjectService subjectService;
+
+    @Autowired
     private DoubanService doubanService;
 
-    @Scheduled(cron = "0 19 01 * * ? ")   //每天凌晨三点执行一次
+    @Scheduled(cron = "0 0 03 * * ? ")   //每天凌晨三点执行一次
     public void renewPlaying() {
         String id;
         List<Playing> playingList;
@@ -58,4 +64,18 @@ public class DouBanSchedule {
         }
         playingDao.renew(playingList);
     }
+
+//    @Scheduled(cron = "0 0 0/1 * * ? ")   //每小时执行一次
+    @Scheduled(cron = "0 22 19 * * ? ")   //每天凌晨三点执行一次
+    public void updateLeaderloard() {
+
+        List<Subject> subjectList = subjectService.getLeaderboard();
+        List<LeaderBoard> leaderboardList = new ArrayList<>();
+        for (Subject subject:
+             subjectList) {
+            leaderboardList.add(new LeaderBoard(subject.getId()));
+        }
+        leaderboardDao.updateLeaderloard(leaderboardList);
+    }
+
 }
