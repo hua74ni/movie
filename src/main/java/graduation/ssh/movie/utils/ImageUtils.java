@@ -28,7 +28,7 @@ public class ImageUtils {
 
         try {
             FileUtils.forceDelete(file);
-            logger.error("image :{}  删除状态 :{}",IMAGE_NAME+subjectId+IMAGESUFFIX,"成功");
+            logger.info("image :{}  删除状态 :{}",IMAGE_NAME+subjectId+IMAGESUFFIX,"成功");
         } catch (IOException e) {
             logger.error("image :{}  删除状态 :{}",IMAGE_NAME+subjectId+IMAGESUFFIX,"失败");
             e.printStackTrace();

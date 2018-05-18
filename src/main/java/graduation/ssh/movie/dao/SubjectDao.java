@@ -137,7 +137,7 @@ public class SubjectDao extends BaseDao<Subject> {
             // 将电影类型作为查询过滤条件，需要在solr上实现模糊查询
             query.addFilterQuery("genres:"+type);
         }
-
+//        casts:张国荣 title:张国荣
         //在solr查询上添加，参数sort,作为返回后的结果的指定排序规则
         if (sort.equals("rating")) {
             // 以电影评分作为排序字段
@@ -153,7 +153,7 @@ public class SubjectDao extends BaseDao<Subject> {
         if (StringUtils.isNotEmpty(key)) {
             // 中文分词查询，比如某条数据某个字段含有中国分词四个字
             // 拆分成 中国 分词 2个词组 将这2词组进行查询出来 ，这个作用适用于联想查询
-            query.set("q",key);
+            query.set("q","keywords:"+key);
         }else{
             query.set("q", "*:*");// 参数q  查询所有
         }

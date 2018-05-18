@@ -138,6 +138,7 @@ public class SubjectController extends BaseController {
     }
 
     @RequestMapping("/adminDelete")
+    @ResponseBody
     @AdminRequired
     public Map<String,Object> adminDelete(String id) throws IOException, SolrServerException {
         Map<String,Object> map = new HashMap<>();

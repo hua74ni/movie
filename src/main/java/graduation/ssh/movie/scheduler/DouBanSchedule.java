@@ -42,7 +42,7 @@ public class DouBanSchedule {
     @Autowired
     private DoubanService doubanService;
 
-    @Scheduled(cron = "0 0 03 * * ? ")   //每天凌晨三点执行一次
+    @Scheduled(cron = "0 03 0 * * ? ")   //每天凌晨三点执行一次
     public void renewPlaying() {
         String id;
         List<Playing> playingList;
@@ -59,8 +59,10 @@ public class DouBanSchedule {
         playingList = new ArrayList<>(length);
         for (int i = 0; i < length; i++) {
             id = jsonArray.getJSONObject(i).getString("id");
-            doubanService.find(id);
-            playingList.add(new Playing(id));
+            Subject subject = doubanService.find(id);
+            if(subject != null && subject.getTitle() != null && !subject.getTitle().equals("")){
+                playingList.add(new Playing(id));
+            }
         }
         playingDao.renew(playingList);
     }

@@ -27,7 +27,7 @@ define(function (require, exports, module) {
         self.startScore($("#scoremark3"));
 
         $("#comment-submit").bind("click", function (e) {
-            var array = $(".ystar");
+            var array = $(".scoremark .ystar");
             var total = 0;
             for(var i = 0;i < array.length;i++){
                 total += parseFloat($(array[i]).attr("val"));

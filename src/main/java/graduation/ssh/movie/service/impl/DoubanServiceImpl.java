@@ -177,6 +177,7 @@ public class DoubanServiceImpl extends BaseService implements DoubanService {
             logger.debug("add subject [{}] from douban", subject);
         }catch (Exception e){
             e.printStackTrace();
+            return null;
         }
 
         return subject;
@@ -203,8 +204,10 @@ public class DoubanServiceImpl extends BaseService implements DoubanService {
             for (int i = 0; i < total; i++) {
                 id = jsonArray.getJSONObject(i).getString("id");
                 subject = find(id);
-                result.add(subject);
-                playingList.add(new Playing(id));
+                if(subject != null && subject.getTitle() != null && !subject.getTitle().equals("")){
+                    result.add(subject);
+                    playingList.add(new Playing(id));
+                }
             }
             playingDao.renew(playingList);
         }
